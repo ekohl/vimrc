@@ -6,4 +6,8 @@ setlocal smarttab
 setlocal expandtab
 setlocal smartindent
 setlocal indentkeys=!^F,o,O,<:>,0),0],0},=elif,=except,0#
-setlocal colorcolumn=80
+if exists('+colorcolumn')
+  set colorcolumn=80
+else
+  au BufWinEnter * let w:m2=matchadd('ErrorMsg', '\%>80v.\+', -1)
+endif
