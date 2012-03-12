@@ -18,3 +18,5 @@ match TrailWhitespace /\s\+$\| \+\ze\t/
 autocmd Syntax * syn match TrailWhitespace /\s\+$\| \+\ze\t/
 
 set wildmode=longest,list:longest,list:full
+
+call pathogen#infect()
